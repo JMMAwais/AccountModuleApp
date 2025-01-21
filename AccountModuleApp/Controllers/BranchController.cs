@@ -16,5 +16,6 @@ namespace AccountModuleApp.Controllers
             await _branchService.AddUpdateBranch(branch);
             return View();
         }
+
     }
 }
