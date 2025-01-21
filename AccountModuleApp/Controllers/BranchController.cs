@@ -11,7 +11,7 @@ namespace AccountModuleApp.Controllers
         {
             _branchService = branchService;
         }
-        public async Task<IActionResult> AddBranch()
+        public IActionResult CreateBranch()
         {
            
             return View();

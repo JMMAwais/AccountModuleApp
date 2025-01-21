@@ -1,54 +1,31 @@
 ﻿@model AccountModuleApp.Models.Branch
 
-@{
-    ViewData["Title"] = "Create Branch";
-}
+
 
 <h3>Create Branch</h3>
-
-<form method="post">
-    @Html.AntiForgeryToken()
+    
+<form method="post" action="AddBranch">
+  
 
     <div class="form-group">
         <label for="BranchName">Branch Name</label>
-        <input type="text" class="form-control" id="BranchName" name="BranchName" value="@Model.BranchName" required />
-        @if (ViewData.ModelState["BranchName"]?.Errors.Count > 0)
-        {
-            <div class="text-danger">
-                @ViewData.ModelState["BranchName"]?.Errors[0]?.ErrorMessage
-            </div>
-        }
+        <input type="text" class="form-control" id="BranchName" name="BranchName"  required />
+       
     </div>
 
     <div class="form-group">
         <label for="BranchCode">Branch Code</label>
-        <input type="text" class="form-control" id="BranchCode" name="BranchCode" value="@Model.BranchCode" required />
-        @if (ViewData.ModelState["BranchCode"]?.Errors.Count > 0)
-        {
-            <div class="text-danger">
-                @ViewData.ModelState["BranchCode"]?.Errors[0]?.ErrorMessage
-            </div>
-        }
+        <input type="text" class="form-control" id="BranchCode" name="BranchCode"  required />
+       
     </div>
 
     <div class="form-group">
         <label for="BranchLocation">Branch Location</label>
-        <input type="text" class="form-control" id="BranchLocation" name="BranchLocation" value="@Model.BranchLocation" required />
-        @if (ViewData.ModelState["BranchLocation"]?.Errors.Count > 0)
-        {
-            <div class="text-danger">
-                @ViewData.ModelState["BranchLocation"]?.Errors[0]?.ErrorMessage
-            </div>
-        }
+        <input type="text" class="form-control" id="BranchLocation" name="BranchLocation"  required />
+       
     </div>
 
-    <button type="submit" class="btn btn-primary">Create Branch</button>
+    <button type="submit" class="btn btn-primary" >Create Branch</button>
 
 </form>
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success mt-3">
-        @TempData["SuccessMessage"]
-    </div>
-}
