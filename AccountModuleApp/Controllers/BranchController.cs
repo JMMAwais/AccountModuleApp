@@ -24,5 +24,10 @@ namespace AccountModuleApp.Controllers
             return View();
         }
 
+        public IActionResult GetAllBranches()
+        {
+            return View();
+        }
+
     }
 }
