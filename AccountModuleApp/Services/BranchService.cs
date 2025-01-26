@@ -2,6 +2,8 @@
 using AccountModuleApp.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections;
 
 namespace AccountModuleApp.Services
 {
@@ -38,7 +40,11 @@ namespace AccountModuleApp.Services
             {
                 return false;
             }
-           
+
+        }
+        public async Task<IEnumerable<Branch>> GetBranchList()
+        {
+            return await appDbContext.branches.ToListAsync();
         }
     }
 }

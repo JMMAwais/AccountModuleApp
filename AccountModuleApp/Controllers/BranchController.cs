@@ -21,12 +21,13 @@ namespace AccountModuleApp.Controllers
         public async Task<IActionResult> AddBranch(Branch branch)
         {
             await _branchService.AddUpdateBranch(branch);
-            return View();
+            return RedirectToAction("GetAllBranches");
         }
 
-        public IActionResult GetAllBranches()
+        public async Task<IActionResult> GetAllBranches()
         {
-            return View();
+            var branches = await _branchService.GetBranchList();
+            return View(branches);
         }
 
     }
